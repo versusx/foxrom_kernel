@@ -80,6 +80,13 @@ config SPRD_ION_OVERLAY_SIZE
         default 1
 	depends on ION
 
+config FORCE_FAST_CHARGE
+	bool "Force AC charge mode at will"
+	default y
+	help
+	  A simple sysfs interface to force adapters that are
+	  detected as USB to charge as AC.
+
 config SC8825_VIBRATOR
         depends on ARCH_SC8825
         select ANDROID_TIMED_OUTPUT

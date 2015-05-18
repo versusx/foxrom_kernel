@@ -39,6 +39,7 @@ obj-$(CONFIG_MACH_CS02) += board_cs02.o board_cs02_wifi.o
 obj-$(CONFIG_MACH_SP8825GA_OPENPHONE) += board_sp8825ga_openphone.o
 
 obj-$(CONFIG_MACH_SP6825GB) += ar6302g_adapter.o
+obj-$(CONFIG_FORCE_FAST_CHARGE) += fastchg.o
 obj-$(CONFIG_SC8825_VIBRATOR) += vibrator.o
 obj-$(CONFIG_SPRD_VIBRATOR) += vibrator.o
 ifeq ($(CONFIG_BCMDHD),m)
