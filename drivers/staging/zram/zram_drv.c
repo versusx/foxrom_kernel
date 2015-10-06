@@ -39,7 +39,7 @@ static int zram_major;
 struct zram *zram_devices;
 
 /* Module params (documentation at end) */
-unsigned int num_devices;
+unsigned int num_devices = 1;
 
 static void zram_stat_inc(u32 *v)
 {
@@ -125,7 +125,7 @@ static void zram_set_disksize(struct zram *zram, size_t totalram_bytes)
 		"\tMemory Size: %zu kB\n"
 		"\tSize you selected: %llu kB\n"
 		"Continuing anyway ...\n",
-		totalram_bytes >> 10, zram->disksize
+		totalram_bytes >> 10, zram->disksize >> 10
 		);
 	}
 
@@ -669,13 +669,7 @@ static int __init zram_init(void)
 		goto out;
 	}
 
-	if (!num_devices) {
-		pr_info("num_devices not specified. Using default: 1\n");
-		num_devices = 1;
-	}
-
 	/* Allocate the device array and initialize each one */
-	pr_info("Creating %u devices ...\n", num_devices);
 	zram_devices = kzalloc(num_devices * sizeof(struct zram), GFP_KERNEL);
 	if (!zram_devices) {
 		ret = -ENOMEM;
@@ -687,7 +681,7 @@ static int __init zram_init(void)
 		if (ret)
 			goto free_devices;
 	}
-
+	pr_info("Created %u device(s) ...\n", num_devices);
 	return 0;
 
 free_devices:
