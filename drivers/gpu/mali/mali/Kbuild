@@ -35,7 +35,7 @@ MALI_SHARED_INTERRUPTS ?= 1
 DEFINES := $(EXTRA_DEFINES)
 
 # Get path to driver source from Linux build system
-DRIVER_DIR=$(shell pwd)/$(src)
+DRIVER_DIR=$(shell pwd)/source/$(src)
 #DRIVER_DIR=$(src)
 
 # For customer releases the Linux Device Drivers will be provided as ARM proprietary and GPL releases:

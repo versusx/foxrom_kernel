@@ -65,13 +65,10 @@ enum {LAST_NORM, LAST_ROOT, LAST_DOT, LAST_DOTDOT, LAST_BIND};
 #define LOOKUP_JUMPED		0x1000
 #define LOOKUP_ROOT		0x2000
 #define LOOKUP_EMPTY		0x4000
-<<<<<<< HEAD
 #ifdef CONFIG_SDCARD_FS_CI_SEARCH
 #define LOOKUP_CASE_INSENSITIVE	0x8000
 #endif
-=======
 #define LOOKUP_CASE_INSENSITIVE	0x8000
->>>>>>> adbd203... f2fs: update f2fs to dev branch with 3.0.y compatibility [arter97]
 
 extern int user_path_at(int, const char __user *, unsigned, struct path *);
 

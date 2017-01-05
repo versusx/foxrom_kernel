@@ -12,7 +12,7 @@
 # Change this to use a different config.h
 CONFIG ?= sc8825
 
-DRIVER_DIR=$(shell pwd)/$(src)
+DRIVER_DIR=$(shell pwd)/source/$(src)
 #DRIVER_DIR=$(src)
 
 # Validate selected config
